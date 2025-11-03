@@ -25,19 +25,19 @@ export function OpenSource() {
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
-    <section ref={ref} className="py-24 px-6">
+    <section ref={ref} className="py-24 px-6 bg-gray-50">
       <div className="max-w-6xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 50 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.8 }}
         >
-          <h2 className="text-4xl md:text-5xl mb-16 text-center bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent">
+          <h2 className="text-4xl md:text-5xl mb-16 text-center bg-gradient-to-r from-gray-900 to-gray-700 bg-clip-text text-transparent">
             Open Source Contributions
           </h2>
 
           <motion.div
-            className="group rounded-2xl backdrop-blur-sm transition-all duration-500 overflow-hidden bg-gradient-to-br from-green-900/20 to-emerald-900/20 border border-green-500/30 hover:border-green-400/50 hover:shadow-2xl hover:shadow-green-500/20"
+            className="group rounded-2xl transition-all duration-500 overflow-hidden bg-white border-2 border-gray-900 hover:border-gray-700 hover:shadow-2xl hover:shadow-gray-300/50"
             initial={{ opacity: 0, y: 30 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.8, delay: 0.2 }}
@@ -50,10 +50,10 @@ export function OpenSource() {
                   alt={contribution.title}
                   className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                 />
-                <div className="absolute inset-0 bg-gradient-to-r from-transparent to-slate-950/80 md:to-slate-950"></div>
-                <div className="absolute top-4 left-4 flex items-center gap-2 px-3 py-1 bg-green-500/20 backdrop-blur-sm border border-green-500/50 rounded-full">
-                  <GitPullRequest className="w-4 h-4 text-green-400" />
-                  <span className="text-sm text-green-400">Active Contributor</span>
+                <div className="absolute inset-0 bg-gradient-to-r from-transparent to-white/80 md:to-white"></div>
+                <div className="absolute top-4 left-4 flex items-center gap-2 px-3 py-1 bg-gray-100 border border-gray-300 rounded-full">
+                  <GitPullRequest className="w-4 h-4 text-gray-900" />
+                  <span className="text-sm text-gray-900">Active Contributor</span>
                 </div>
               </div>
 
@@ -61,43 +61,43 @@ export function OpenSource() {
               <div className="md:col-span-3 p-6 md:p-8">
                 <div className="flex flex-col md:flex-row md:items-start justify-between gap-4 mb-4">
                   <div>
-                    <h3 className="text-2xl text-slate-100 mb-2 group-hover:text-green-400 transition-colors">
+                    <h3 className="text-2xl text-gray-900 mb-2 group-hover:text-gray-700 transition-colors">
                       {contribution.title}
                     </h3>
-                    <p className="text-green-400">{contribution.subtitle}</p>
+                    <p className="text-gray-700">{contribution.subtitle}</p>
                   </div>
                   <div className="flex gap-3">
                     <a
                       href={contribution.demoUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="p-2 rounded-lg bg-slate-800/50 hover:bg-green-500/20 hover:border-green-500/50 border border-transparent transition-all duration-300"
+                      className="p-2 rounded-lg bg-gray-100 hover:bg-gray-200 border border-gray-300 transition-all duration-300"
                       title="View Live Site"
                     >
-                      <ExternalLink className="w-5 h-5 text-slate-400 hover:text-green-400 transition-colors" />
+                      <ExternalLink className="w-5 h-5 text-gray-700 hover:text-gray-900 transition-colors" />
                     </a>
                     <a
                       href={contribution.githubUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="p-2 rounded-lg bg-slate-800/50 hover:bg-green-500/20 hover:border-green-500/50 border border-transparent transition-all duration-300"
+                      className="p-2 rounded-lg bg-gray-100 hover:bg-gray-200 border border-gray-300 transition-all duration-300"
                       title="View on GitHub"
                     >
-                      <Github className="w-5 h-5 text-slate-400 hover:text-green-400 transition-colors" />
+                      <Github className="w-5 h-5 text-gray-700 hover:text-gray-900 transition-colors" />
                     </a>
                   </div>
                 </div>
 
-                <p className="text-slate-300 mb-6">{contribution.description}</p>
+                <p className="text-gray-700 mb-6">{contribution.description}</p>
 
                 <div className="grid grid-cols-2 gap-4 mb-6">
-                  <div className="p-3 bg-green-500/10 rounded-lg border border-green-500/20">
-                    <p className="text-xs text-slate-400 mb-1">Contributions</p>
-                    <p className="text-green-400">{contribution.stats.commits}</p>
+                  <div className="p-3 bg-gray-100 rounded-lg border border-gray-300">
+                    <p className="text-xs text-gray-600 mb-1">Contributions</p>
+                    <p className="text-gray-900">{contribution.stats.commits}</p>
                   </div>
-                  <div className="p-3 bg-green-500/10 rounded-lg border border-green-500/20">
-                    <p className="text-xs text-slate-400 mb-1">Impact</p>
-                    <p className="text-green-400">{contribution.stats.impact}</p>
+                  <div className="p-3 bg-gray-100 rounded-lg border border-gray-300">
+                    <p className="text-xs text-gray-600 mb-1">Impact</p>
+                    <p className="text-gray-900">{contribution.stats.impact}</p>
                   </div>
                 </div>
 
@@ -106,7 +106,7 @@ export function OpenSource() {
                     <Badge
                       key={i}
                       variant="outline"
-                      className="bg-slate-800/50 border-slate-700 text-slate-300 hover:border-green-500/50 hover:text-green-400 transition-colors"
+                      className="bg-gray-100 border-gray-300 text-gray-700 hover:border-gray-900 hover:text-gray-900 transition-colors"
                     >
                       {tech}
                     </Badge>

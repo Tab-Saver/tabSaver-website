@@ -8,7 +8,7 @@ const skillCategories = [
   {
     title: "Languages & Frameworks",
     icon: Code2,
-    color: "blue",
+    color: "gray",
     skills: [
       "Java",
       "Python",
@@ -28,7 +28,7 @@ const skillCategories = [
   {
     title: "Cloud, DevOps & Tools",
     icon: Cloud,
-    color: "cyan",
+    color: "gray",
     skills: [
       "AWS DynamoDB",
       "AWS S3",
@@ -50,14 +50,14 @@ export function Skills() {
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
-    <section ref={ref} className="py-24 px-6 bg-slate-950/50">
+    <section ref={ref} className="py-24 px-6 bg-gray-50">
       <div className="max-w-6xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 50 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.8 }}
         >
-          <h2 className="text-4xl md:text-5xl mb-16 text-center bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent">
+          <h2 className="text-4xl md:text-5xl mb-16 text-center bg-gradient-to-r from-gray-900 to-gray-700 bg-clip-text text-transparent">
             Skills & Technologies
           </h2>
 
@@ -67,16 +67,16 @@ export function Skills() {
               return (
                 <motion.div
                   key={index}
-                  className="p-8 bg-slate-900/50 border border-slate-800 rounded-2xl backdrop-blur-sm hover:border-cyan-500/50 transition-all duration-300"
+                  className="p-8 bg-white border border-gray-300 rounded-2xl hover:border-gray-900 hover:shadow-lg transition-all duration-300"
                   initial={{ opacity: 0, scale: 0.95 }}
                   animate={isInView ? { opacity: 1, scale: 1 } : {}}
                   transition={{ duration: 0.6, delay: index * 0.2 }}
                 >
                   <div className="flex items-center gap-3 mb-6">
-                    <div className={`p-3 bg-${category.color}-500/10 rounded-lg`}>
-                      <Icon className={`w-6 h-6 text-${category.color}-400`} />
+                    <div className="p-3 bg-gray-100 rounded-lg border border-gray-300">
+                      <Icon className="w-6 h-6 text-gray-900" />
                     </div>
-                    <h3 className="text-xl text-slate-100">{category.title}</h3>
+                    <h3 className="text-xl text-gray-900">{category.title}</h3>
                   </div>
 
                   <div className="flex flex-wrap gap-2">
@@ -89,7 +89,7 @@ export function Skills() {
                       >
                         <Badge
                           variant="secondary"
-                          className="bg-slate-800/50 text-slate-300 hover:bg-cyan-500/20 hover:text-cyan-400 transition-all duration-300"
+                          className="bg-gray-100 text-gray-700 border border-gray-300 hover:bg-gray-900 hover:text-white transition-all duration-300"
                         >
                           {skill}
                         </Badge>

@@ -8,52 +8,52 @@ export function Contact() {
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
-    <section ref={ref} className="py-24 px-6 bg-slate-950/50">
+    <section ref={ref} className="py-24 px-6 bg-white">
       <div className="max-w-4xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 50 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.8 }}
         >
-          <h2 className="text-4xl md:text-5xl mb-8 text-center bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent">
+          <h2 className="text-4xl md:text-5xl mb-8 text-center bg-gradient-to-r from-gray-900 to-gray-700 bg-clip-text text-transparent">
             Let's Connect
           </h2>
 
-          <p className="text-center text-slate-300 mb-16 max-w-2xl mx-auto">
+          <p className="text-center text-gray-700 mb-16 max-w-2xl mx-auto">
             I'm always open to discussing new projects, creative ideas, or opportunities to be part of your visions.
           </p>
 
           <div className="grid md:grid-cols-2 gap-6 mb-12">
             <motion.a
               href="mailto:o.18hamdan@outlook.com"
-              className="flex items-center gap-4 p-6 bg-slate-900/50 border border-slate-800 rounded-xl hover:border-cyan-500/50 hover:shadow-lg hover:shadow-cyan-500/10 transition-all duration-300 group"
+              className="flex items-center gap-4 p-6 bg-white border border-gray-300 rounded-xl hover:border-gray-900 hover:shadow-lg hover:shadow-gray-300/30 transition-all duration-300 group"
               initial={{ opacity: 0, x: -30 }}
               animate={isInView ? { opacity: 1, x: 0 } : {}}
               transition={{ duration: 0.6, delay: 0.2 }}
             >
-              <div className="p-3 bg-cyan-500/10 rounded-lg group-hover:bg-cyan-500/20 transition-colors">
-                <Mail className="w-6 h-6 text-cyan-400" />
+              <div className="p-3 bg-gray-100 rounded-lg group-hover:bg-gray-200 transition-colors border border-gray-300">
+                <Mail className="w-6 h-6 text-gray-900" />
               </div>
               <div>
-                <p className="text-sm text-slate-400 mb-1">Email</p>
-                <p className="text-slate-100 group-hover:text-cyan-400 transition-colors">
+                <p className="text-sm text-gray-600 mb-1">Email</p>
+                <p className="text-gray-900 group-hover:text-gray-700 transition-colors">
                   o.18hamdan@outlook.com
                 </p>
               </div>
             </motion.a>
 
             <motion.div
-              className="flex items-center gap-4 p-6 bg-slate-900/50 border border-slate-800 rounded-xl"
+              className="flex items-center gap-4 p-6 bg-white border border-gray-300 rounded-xl"
               initial={{ opacity: 0, x: 30 }}
               animate={isInView ? { opacity: 1, x: 0 } : {}}
               transition={{ duration: 0.6, delay: 0.3 }}
             >
-              <div className="p-3 bg-blue-500/10 rounded-lg">
-                <Phone className="w-6 h-6 text-blue-400" />
+              <div className="p-3 bg-gray-100 rounded-lg border border-gray-300">
+                <Phone className="w-6 h-6 text-gray-900" />
               </div>
               <div>
-                <p className="text-sm text-slate-400 mb-1">Phone</p>
-                <p className="text-slate-100">(202) 299-7369</p>
+                <p className="text-sm text-gray-600 mb-1">Phone</p>
+                <p className="text-gray-900">(202) 299-7369</p>
               </div>
             </motion.div>
 
@@ -61,17 +61,17 @@ export function Contact() {
               href="https://github.com/omarayman23"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-4 p-6 bg-slate-900/50 border border-slate-800 rounded-xl hover:border-cyan-500/50 hover:shadow-lg hover:shadow-cyan-500/10 transition-all duration-300 group"
+              className="flex items-center gap-4 p-6 bg-white border border-gray-300 rounded-xl hover:border-gray-900 hover:shadow-lg hover:shadow-gray-300/30 transition-all duration-300 group"
               initial={{ opacity: 0, x: -30 }}
               animate={isInView ? { opacity: 1, x: 0 } : {}}
               transition={{ duration: 0.6, delay: 0.4 }}
             >
-              <div className="p-3 bg-cyan-500/10 rounded-lg group-hover:bg-cyan-500/20 transition-colors">
-                <Github className="w-6 h-6 text-cyan-400" />
+              <div className="p-3 bg-gray-100 rounded-lg group-hover:bg-gray-200 transition-colors border border-gray-300">
+                <Github className="w-6 h-6 text-gray-900" />
               </div>
               <div>
-                <p className="text-sm text-slate-400 mb-1">GitHub</p>
-                <p className="text-slate-100 group-hover:text-cyan-400 transition-colors">
+                <p className="text-sm text-gray-600 mb-1">GitHub</p>
+                <p className="text-gray-900 group-hover:text-gray-700 transition-colors">
                   @omarayman23
                 </p>
               </div>
@@ -81,45 +81,45 @@ export function Contact() {
               href="https://www.linkedin.com/in/omar-hamdan-74674933b"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-4 p-6 bg-slate-900/50 border border-slate-800 rounded-xl hover:border-blue-500/50 hover:shadow-lg hover:shadow-blue-500/10 transition-all duration-300 group"
+              className="flex items-center gap-4 p-6 bg-white border border-gray-300 rounded-xl hover:border-gray-900 hover:shadow-lg hover:shadow-gray-300/30 transition-all duration-300 group"
               initial={{ opacity: 0, x: 30 }}
               animate={isInView ? { opacity: 1, x: 0 } : {}}
               transition={{ duration: 0.6, delay: 0.5 }}
             >
-              <div className="p-3 bg-blue-500/10 rounded-lg group-hover:bg-blue-500/20 transition-colors">
-                <Linkedin className="w-6 h-6 text-blue-400" />
+              <div className="p-3 bg-gray-100 rounded-lg group-hover:bg-gray-200 transition-colors border border-gray-300">
+                <Linkedin className="w-6 h-6 text-gray-900" />
               </div>
               <div>
-                <p className="text-sm text-slate-400 mb-1">LinkedIn</p>
-                <p className="text-slate-100 group-hover:text-blue-400 transition-colors">
+                <p className="text-sm text-gray-600 mb-1">LinkedIn</p>
+                <p className="text-gray-900 group-hover:text-gray-700 transition-colors">
                   Omar Hamdan
                 </p>
               </div>
             </motion.a>
 
             <motion.div
-              className="flex items-center gap-4 p-6 bg-slate-900/50 border border-slate-800 rounded-xl md:col-span-2"
+              className="flex items-center gap-4 p-6 bg-white border border-gray-300 rounded-xl md:col-span-2"
               initial={{ opacity: 0, y: 30 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.6, delay: 0.6 }}
             >
-              <div className="p-3 bg-teal-500/10 rounded-lg">
-                <MapPin className="w-6 h-6 text-teal-400" />
+              <div className="p-3 bg-gray-100 rounded-lg border border-gray-300">
+                <MapPin className="w-6 h-6 text-gray-900" />
               </div>
               <div>
-                <p className="text-sm text-slate-400 mb-1">Location</p>
-                <p className="text-slate-100">Ashburn, VA</p>
+                <p className="text-sm text-gray-600 mb-1">Location</p>
+                <p className="text-gray-900">Ashburn, VA</p>
               </div>
             </motion.div>
           </div>
 
           <motion.div
-            className="text-center pt-12 border-t border-slate-800"
+            className="text-center pt-12 border-t border-gray-300"
             initial={{ opacity: 0 }}
             animate={isInView ? { opacity: 1 } : {}}
             transition={{ duration: 0.8, delay: 0.6 }}
           >
-            <p className="text-slate-400">
+            <p className="text-gray-600">
               © 2025 Omar A. Hamdan. Built with React, Tailwind CSS, and Motion.
             </p>
           </motion.div>

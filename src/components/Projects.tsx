@@ -1,7 +1,7 @@
 import { motion } from "motion/react";
 import { useInView } from "motion/react";
 import { useRef } from "react";
-import { ExternalLink, Github, Code2, FileCode, Terminal, Laptop } from "lucide-react";
+import { ExternalLink, Github, Camera, FileText, GitBranch, Calculator, Trophy } from "lucide-react";
 import { Badge } from "./ui/badge";
 
 const projects = [
@@ -22,7 +22,8 @@ const projects = [
       "Web Audio API",
     ],
     featured: true,
-    icon: Code2,
+    hackathonWinner: true,
+    icon: Camera,
     githubUrl: "https://github.com/omarhamdan010/PhotoAlarm",
     demoUrl: "https://photo-alarm-yfw7.vercel.app/",
   },
@@ -41,7 +42,7 @@ const projects = [
       "Tailwind",
     ],
     featured: true,
-    icon: FileCode,
+    icon: FileText,
     githubUrl: "https://github.com/omarayman23/photoAlarm",
     demoUrl: "https://cover-letterai.vercel.app/",
   },
@@ -52,7 +53,7 @@ const projects = [
       "Developed an interactive React.js and CSS platform that visualizes 12 core algorithms (BFS, DFS, Dijkstra, A*, sorting/searching) with real-time execution. Implements queue, stack, and grid logic optimized for performance",
     tech: ["React.js", "JavaScript", "Tailwind CSS", "Lucide React", "CSS", "Web APIs"],
     featured: false,
-    icon: Terminal,
+    icon: GitBranch,
     githubUrl: "https://github.com/omarayman23/algorithmVisuals",
     demoUrl: "https://algorithm-visuals.vercel.app/",
   },
@@ -71,7 +72,7 @@ const projects = [
       "MathJax",
     ],
     featured: false,
-    icon: Laptop,
+    icon: Calculator,
     githubUrl: "https://github.com/omarayman23/CalcWiz?tab=readme-ov-file",
     demoUrl: "https://calc-wiz-eight.vercel.app/",
   },
@@ -89,74 +90,93 @@ export function Projects() {
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.8 }}
         >
-          <h2 className="text-4xl md:text-5xl mb-16 text-center font-bold text-black">
+          <h2 className="text-4xl md:text-5xl mb-16 text-center bg-gradient-to-r from-gray-900 to-gray-700 bg-clip-text text-transparent">
             Featured Projects
           </h2>
 
           <div className="grid gap-8">
             {projects.map((project, index) => {
-              const IconComponent = project.icon;
+              const Icon = project.icon;
+              const isHackathonWinner = project.hackathonWinner;
               return (
                 <motion.div
                   key={index}
-                  className={`group rounded-2xl transition-all duration-500 overflow-hidden ${
-                    project.featured
-                      ? "bg-white border-2 border-black hover:shadow-2xl"
-                      : "bg-gray-50 border border-gray-300 hover:border-black hover:shadow-xl"
+                  className={`group rounded-2xl transition-all duration-500 overflow-hidden relative ${
+                    isHackathonWinner
+                      ? "bg-white border-2 border-green-600 hover:border-green-500 hover:shadow-2xl hover:shadow-green-200/50"
+                      : "bg-white border-2 border-gray-900 hover:border-gray-700 hover:shadow-2xl hover:shadow-gray-300/50"
                   }`}
                   initial={{ opacity: 0, y: 30 }}
                   animate={isInView ? { opacity: 1, y: 0 } : {}}
                   transition={{ duration: 0.6, delay: index * 0.1 }}
                 >
-                  <div className="grid md:grid-cols-5 gap-6">
-                    {/* Project Icon */}
-                    <div className="md:col-span-2 relative h-64 md:h-auto overflow-hidden bg-black flex items-center justify-center">
-                      <IconComponent className="w-32 h-32 text-white" strokeWidth={1.5} />
+                  {isHackathonWinner && (
+                    <div className="absolute top-4 right-4 flex items-center gap-2 px-3 py-1 bg-green-100 border border-green-600 rounded-full">
+                      <Trophy className="w-4 h-4 text-green-700" />
+                      <span className="text-sm text-green-700">Hackathon Winner</span>
                     </div>
-
-                    {/* Project Content */}
-                    <div className="md:col-span-3 p-6 md:p-8">
-                      <div className="flex flex-col md:flex-row md:items-start justify-between gap-4 mb-4">
-                        <div>
-                          <h3 className="text-2xl text-black mb-2 group-hover:text-gray-700 transition-colors font-bold">
-                            {project.title}
-                          </h3>
-                          <p className="text-gray-600 font-medium">{project.subtitle}</p>
-                        </div>
-                        <div className="flex gap-3">
-                          <a
-                            href={project.demoUrl}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="p-2 rounded-lg bg-white hover:bg-black hover:text-white border-2 border-black transition-all duration-300"
-                            title="View Demo"
-                          >
-                            <ExternalLink className="w-5 h-5" />
-                          </a>
-                          <a
-                            href={project.githubUrl}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="p-2 rounded-lg bg-white hover:bg-black hover:text-white border-2 border-black transition-all duration-300"
-                            title="View on GitHub"
-                          >
-                            <Github className="w-5 h-5" />
-                          </a>
-                        </div>
+                  )}
+                  <div className="p-6 md:p-8">
+                    <div className="flex items-start gap-6">
+                      {/* Project Icon */}
+                      <div
+                        className={`flex-shrink-0 p-4 rounded-xl ${
+                          isHackathonWinner
+                            ? "bg-green-50 border-2 border-green-600"
+                            : "bg-gray-100 border-2 border-gray-900"
+                        }`}
+                      >
+                        <Icon
+                          className={`w-8 h-8 ${
+                            isHackathonWinner ? "text-green-700" : "text-gray-900"
+                          }`}
+                        />
                       </div>
 
-                      <p className="text-gray-700 mb-6">{project.description}</p>
+                      {/* Project Content */}
+                      <div className="flex-1 min-w-0">
+                        <div className="flex flex-col md:flex-row md:items-start justify-between gap-4 mb-4">
+                          <div className={isHackathonWinner ? "pr-40" : ""}>
+                            <h3 className="text-2xl text-gray-900 mb-2 group-hover:text-gray-700 transition-colors">
+                              {project.title}
+                            </h3>
+                            <p className="text-gray-700">{project.subtitle}</p>
+                          </div>
+                          <div className="flex gap-3">
+                            <a
+                              href={project.demoUrl}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="p-2 rounded-lg bg-gray-100 hover:bg-gray-200 border border-gray-300 transition-all duration-300"
+                              title="View Demo"
+                            >
+                              <ExternalLink className="w-5 h-5 text-gray-700 hover:text-gray-900 transition-colors" />
+                            </a>
+                            <a
+                              href={project.githubUrl}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="p-2 rounded-lg bg-gray-100 hover:bg-gray-200 border border-gray-300 transition-all duration-300"
+                              title="View on GitHub"
+                            >
+                              <Github className="w-5 h-5 text-gray-700 hover:text-gray-900 transition-colors" />
+                            </a>
+                          </div>
+                        </div>
 
-                      <div className="flex flex-wrap gap-2">
-                        {project.tech.map((tech, i) => (
-                          <Badge
-                            key={i}
-                            variant="outline"
-                            className="bg-white border-black text-black hover:bg-black hover:text-white transition-colors"
-                          >
-                            {tech}
-                          </Badge>
-                        ))}
+                        <p className="text-gray-700 mb-6">{project.description}</p>
+
+                        <div className="flex flex-wrap gap-2">
+                          {project.tech.map((tech, i) => (
+                            <Badge
+                              key={i}
+                              variant="outline"
+                              className="bg-gray-100 border-gray-300 text-gray-700 hover:border-gray-900 hover:text-gray-900 transition-colors"
+                            >
+                              {tech}
+                            </Badge>
+                          ))}
+                        </div>
                       </div>
                     </div>
                   </div>
