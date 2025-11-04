@@ -9,13 +9,13 @@ const education = [
     school: "Virginia Tech",
     degree: "B.S Computer Science",
     dates: "May 2026 - May 2028",
-    imageUrl: "https://images.unsplash.com/photo-1589138848734-01c0b31e33ab?w=1920&q=80",
+    imageUrl: "https://www.sireus.org/pictures/skarmbild-2023-03-17-093416.png?v20230317143434",
   },
   {
     school: "NOVA Community College",
     degree: "A.S Computer Science",
     dates: "Aug 2024 - May 2026",
-    imageUrl: "https://www.nvcc.edu/about/assets/images/loudoun-pano-01.jpg",
+    imageUrl: "https://honorlock.com/wp-content/uploads/2025/06/NOVA-768x432.jpg",
   },
 ];
 
