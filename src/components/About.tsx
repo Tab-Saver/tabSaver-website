@@ -9,15 +9,13 @@ const education = [
     school: "Virginia Tech",
     degree: "B.S Computer Science",
     dates: "May 2026 - May 2028",
-    // FIX: Added a stable, high-quality image of the VT campus
-    imageUrl: "https://www.transfervirginia.org/images/ProfileSliderImage_6A67B9EC3FC911EBB15B0242AC15010A.jpg",
+    imageUrl: "https://images.unsplash.com/photo-1589138848734-01c0b31e33ab?w=1920&q=80",
   },
   {
     school: "NOVA Community College",
     degree: "A.S Computer Science",
     dates: "Aug 2024 - May 2026",
-    // FIX: Added a stable, high-quality image of the NOVA Loudoun campus
-    imageUrl: "https://honorlock.com/wp-content/uploads/2025/06/NOVA-768x432.jpg",
+    imageUrl: "https://www.nvcc.edu/about/assets/images/loudoun-pano-01.jpg",
   },
 ];
 
@@ -45,12 +43,13 @@ export function About() {
             Education & Achievements
           </h2>
 
-          {/* Education Section (Images will now load) */}
+          {/* Education Section */}
           <div className="grid md:grid-cols-2 gap-8 mb-16">
             {education.map((edu, index) => (
               <motion.div
                 key={index}
-                className="group relative rounded-2xl overflow-hidden border-2 border-gray-900 shadow-lg hover:shadow-2xl hover:shadow-gray-300/50 transition-all duration-500"
+                // FIX: Replaced black border with green
+                className="group relative rounded-2xl overflow-hidden border-2 border-green-600 shadow-lg hover:shadow-2xl hover:shadow-green-200/50 transition-all duration-500"
                 initial={{ opacity: 0, y: 30 }}
                 animate={isInView ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
@@ -62,9 +61,10 @@ export function About() {
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/40 to-transparent" />
                 
+                {/* FIX: Styled badge to be green */}
                 <Badge
                   variant="secondary"
-                  className="absolute top-4 right-4 bg-white/90 backdrop-blur-sm text-gray-900 border border-gray-300"
+                  className="absolute top-4 right-4 bg-green-100 text-green-700 border border-green-600 backdrop-blur-sm"
                 >
                   In Progress
                 </Badge>
@@ -78,33 +78,35 @@ export function About() {
             ))}
           </div>
 
-          {/* FIX: Achievements Section (Now in a single box) */}
+          {/* FIX: Achievements Section (Now in a single box with smaller items) */}
           <motion.div
-            className="p-6 md:p-8 bg-white rounded-2xl border-2 border-gray-900 shadow-lg hover:shadow-2xl hover:shadow-gray-300/50 transition-all duration-500"
+            className="p-6 md:p-8 bg-white rounded-2xl border border-gray-300 shadow-lg hover:border-gray-900 hover:shadow-2xl hover:shadow-gray-300/50 transition-all duration-500"
             initial={{ opacity: 0, y: 30 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.6, delay: 0.3 }}
           >
-            {/* This grid is now *inside* the single box */}
-            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
+            {/* Grid for the list of achievements */}
+            <div className="grid grid-cols-2 md:grid-cols-3 gap-6">
               {achievements.map((ach, index) => {
                 const Icon = ach.icon;
                 return (
-                  // These are the individual items, now styled without borders/shadows
+                  // These are the individual "bullet point" items
                   <motion.div
                     key={index}
-                    className="p-6 bg-gray-50 rounded-2xl text-center flex flex-col items-center justify-start transition-all duration-300"
+                    className="flex items-center gap-3"
                     initial={{ opacity: 0, scale: 0.9 }}
                     animate={isInView ? { opacity: 1, scale: 1 } : {}}
                     transition={{ duration: 0.5, delay: 0.4 + index * 0.1 }}
                   >
-                    <div className="p-3 bg-gray-100 rounded-lg border border-gray-300 mb-4">
-                      <Icon className="w-6 h-6 text-gray-900" />
+                    <div className="p-3 bg-gray-100 rounded-lg border border-gray-300 flex-shrink-0">
+                      <Icon className="w-5 h-5 text-gray-900" />
                     </div>
-                    <h3 className="text-lg font-medium text-gray-900">{ach.title}</h3>
-                    {ach.subtitle && (
-                      <p className="text-sm text-gray-600">{ach.subtitle}</p>
-                    )}
+                    <div>
+                      <h3 className="text-base font-medium text-gray-900">{ach.title}</h3>
+                      {ach.subtitle && (
+                        <p className="text-sm text-gray-600">{ach.subtitle}</p>
+                      )}
+                    </div>
                   </motion.div>
                 );
               })}
