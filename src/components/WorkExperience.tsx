@@ -187,4 +187,4 @@ export function WorkExperience() {
       </Dialog>
     </section>
   );
-}`;
+}
