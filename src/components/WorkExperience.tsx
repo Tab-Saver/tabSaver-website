@@ -44,7 +44,12 @@ const jobs = [
     period: "Nov 2024 - Dec 2024",
     iconUrl: "https://s3.us-east-1.amazonaws.com/files.galaxydigital.com/4677/agency/151088.jpg?20250111142103",
     type: "past",
-    description: [],
+    description: [
+      "Created and designed over 1,400 personalized greeting cards for hospitalized children, veterans, and seniors, promoting positivity and emotional well-being through art and uplifting messages.",
+      "Collaborated with a volunteer team to develop themed designs for holidays and awareness events, ensuring each card met organization guidelines for color, tone, and compassion.",
+      "Wrote inspiring, heartfelt messages tailored to different audiences, blending creativity and empathy to foster connection and comfort among recipients.",
+      "Assisted in organizing community art events and volunteer workshops, encouraging youth and families to participate in acts of kindness through handmade designs."
+    ],
   },
   {
     title: "Sales Professional",
@@ -115,10 +120,10 @@ export function WorkExperience() {
                 transition={{ duration: 0.5, delay: index * 0.1 }}
               >
                 <div className="flex items-start gap-4">
-                  <div className="w-14 h-14 rounded-lg overflow-hidden bg-gray-100 border border-gray-300 flex items-center justify-center flex-shrink-0">
+                  <div className="w-14 h-14 rounded-lg overflow-hidden bg-gray-100 border border-gray-300 flex items-center justify-center flex-shrink-0 p-2">
                     <ImageWithFallback
                       src={job.iconUrl}
-                      alt={`${job.company} logo`}
+                      alt={\`\${job.company} logo\`}
                       className="w-full h-full object-contain"
                     />
                   </div>
@@ -127,7 +132,7 @@ export function WorkExperience() {
                     <h3 className="text-lg text-gray-900 mb-1">{job.title}</h3>
                     <p className="text-gray-700 text-sm mb-2">
                       {job.company}
-                      {job.location && ` • ${job.location}`}
+                      {job.location && \` • \${job.location}\`}
                     </p>
                     <p className="text-xs text-gray-500">{job.period}</p>
                   </div>
@@ -145,10 +150,10 @@ export function WorkExperience() {
             <DialogTitle className="text-2xl flex items-center gap-3">
               {selectedJob && (
                 <>
-                  <div className="w-12 h-12 rounded-lg overflow-hidden bg-gray-100 border border-gray-300 flex items-center justify-center flex-shrink-0">
+                  <div className="w-12 h-12 rounded-lg overflow-hidden bg-gray-100 border border-gray-300 flex items-center justify-center flex-shrink-0 p-2">
                     <ImageWithFallback
                       src={selectedJob.iconUrl}
-                      alt={`${selectedJob.company} logo`}
+                      alt={\`\${selectedJob.company} logo\`}
                       className="w-full h-full object-contain"
                     />
                   </div>
@@ -182,4 +187,4 @@ export function WorkExperience() {
       </Dialog>
     </section>
   );
-}
+}`;
