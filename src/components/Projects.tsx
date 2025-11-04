@@ -101,37 +101,20 @@ export function Projects() {
               return (
                 <motion.div
                   key={index}
-                  // FIX: Border is now gold for Hackathon Winner, transparent for others
-                  className={`group rounded-2xl transition-all duration-500 overflow-hidden relative ${
-                    isHackathonWinner
-                      ? "bg-white border-2 border-yellow-500 hover:border-yellow-400 hover:shadow-2xl hover:shadow-yellow-200/50" // Gold colors
-                      : "bg-white border-2 border-transparent hover:border-gray-700 hover:shadow-2xl hover:shadow-gray-300/50"
-                  }`}
+                  // FIX: All cards now have the same base style
+                  className="group rounded-2xl transition-all duration-500 overflow-hidden relative bg-white border-2 border-transparent hover:border-gray-700 hover:shadow-2xl hover:shadow-gray-300/50"
                   initial={{ opacity: 0, y: 30 }}
                   animate={isInView ? { opacity: 1, y: 0 } : {}}
                   transition={{ duration: 0.6, delay: index * 0.1 }}
                 >
-                  {isHackathonWinner && (
-                    // FIX: Positioned Hackathon Winner badge to top-right corner
-                    <div className="absolute top-4 right-4 flex items-center gap-2 px-3 py-1 bg-yellow-100 border border-yellow-500 rounded-full z-10">
-                      <Trophy className="w-4 h-4 text-yellow-700" />
-                      <span className="text-sm text-yellow-700">Hackathon Winner</span>
-                    </div>
-                  )}
                   <div className="p-6 md:p-8">
                     <div className="flex items-start gap-6">
-                      {/* Project Icon */}
+                      {/* FIX: All icons now have the same base style */}
                       <div
-                        className={`flex-shrink-0 p-4 rounded-xl ${
-                          isHackathonWinner
-                            ? "bg-yellow-50 border-2 border-yellow-500" // Gold colors
-                            : "bg-gray-100 border-2 border-gray-900"
-                        }`}
+                        className="flex-shrink-0 p-4 rounded-xl bg-gray-100 border-2 border-gray-900"
                       >
                         <Icon
-                          className={`w-8 h-8 ${
-                            isHackathonWinner ? "text-yellow-700" : "text-gray-900" // Gold colors
-                          }`}
+                          className="w-8 h-8 text-gray-900"
                         />
                       </div>
 
@@ -182,6 +165,14 @@ export function Projects() {
                       </div>
                     </div>
                   </div>
+                  
+                  {/* FIX: Gold badge moved to bottom-right */}
+                  {isHackathonWinner && (
+                    <div className="absolute bottom-4 right-4 flex items-center gap-2 px-3 py-1 bg-yellow-100 border border-yellow-500 rounded-full z-10">
+                      <Trophy className="w-4 h-4 text-yellow-700" />
+                      <span className="text-sm text-yellow-700">Hackathon Winner</span>
+                    </div>
+                  )}
                 </motion.div>
               );
             })}
