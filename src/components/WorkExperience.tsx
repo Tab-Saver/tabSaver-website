@@ -70,7 +70,7 @@ const jobs = [
     company: "Regal Cinemas",
     location: "Brambleton, VA",
     period: "Mar 2023 - Dec 2024",
-    iconUrl: "https://www.woodlandsonline.com/images/cd/regal.jpg",
+    iconUrl: "https://logosandtypes.com/wp-content/uploads/2021/04/Regal.png",
     type: "past",
     description: [
       "Supervised a team of 10+ employees, delegating tasks, maintaining schedules, and ensuring smooth day-to-day theater operations.",
@@ -83,7 +83,7 @@ const jobs = [
     company: "Harris Teeter",
     location: "Brambleton, VA",
     period: "May 2022 - Dec 2022",
-    iconUrl: "https://imgproxy.divecdn.com/5YbgnoX-Yz0_BleIkjN0nl_QgU8Iwi79uN11PTEEMps/g:ce/rs:fill:1200:675:1/Z3M6Ly9kaXZlc2l0ZS1zdG9yYWdlL2RpdmVpbWFnZS9IYXJyaXNfVGVldGVyX2xvZ29fWTdDUG5yVi5wbmc=.webp",
+    iconUrl: "https://logowik.com/content/uploads/images/harris-teeter-new-20237267.logowik.com.webp",
     type: "past",
     description: [
       "Prepared and served beverages and food items according to company standards, ensuring speed, accuracy, and quality in a high-volume environment.",
