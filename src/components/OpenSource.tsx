@@ -34,17 +34,19 @@ export function OpenSource() {
             Open Source Contributions
           </h2>
 
+          {/* FIX: Card is now green-themed */}
           <motion.div
-            className="group rounded-2xl transition-all duration-500 overflow-hidden bg-white border-2 border-gray-900 hover:border-gray-700 hover:shadow-2xl hover:shadow-gray-300/50"
+            className="group rounded-2xl transition-all duration-500 overflow-hidden bg-white border-2 border-green-600 hover:border-green-500 hover:shadow-2xl hover:shadow-green-200/50"
             initial={{ opacity: 0, y: 30 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.8, delay: 0.2 }}
           >
             <div className="p-6 md:p-8">
               <div className="flex items-start gap-6">
-                {/* Project Icon */}
-                <div className="flex-shrink-0 p-6 bg-gray-100 rounded-xl border-2 border-gray-900">
-                  <Code2 className="w-12 h-12 text-gray-900" />
+                
+                {/* FIX: Icon is now green-themed */}
+                <div className="flex-shrink-0 p-6 bg-green-50 rounded-xl border-2 border-green-600">
+                  <Code2 className="w-12 h-12 text-green-700" />
                 </div>
 
                 {/* Project Content */}
@@ -55,9 +57,10 @@ export function OpenSource() {
                         <h3 className="text-2xl text-gray-900 group-hover:text-gray-700 transition-colors">
                           {contribution.title}
                         </h3>
-                        <div className="flex items-center gap-2 px-3 py-1 bg-gray-100 border border-gray-300 rounded-full">
-                          <GitPullRequest className="w-4 h-4 text-gray-900" />
-                          <span className="text-sm text-gray-900">Active Contributor</span>
+                        {/* FIX: Badge is now green-themed */}
+                        <div className="flex items-center gap-2 px-3 py-1 bg-green-100 border border-green-600 rounded-full">
+                          <GitPullRequest className="w-4 h-4 text-green-700" />
+                          <span className="text-sm text-green-700">Active Contributor</span>
                         </div>
                       </div>
                       <p className="text-gray-700">{contribution.subtitle}</p>
