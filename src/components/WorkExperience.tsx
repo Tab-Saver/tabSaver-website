@@ -16,7 +16,7 @@ const jobs = [
     company: "ABM Industries",
     location: "Dulles, VA",
     period: "Oct 2025 - Present",
-    iconUrl: "https://ssd2.s3.amazonaws.com/4b3vyzv1gmtq5me9dz7pdb80o154",
+    iconUrl: "https://yt3.googleusercontent.com/49U9IR9CaVSbPFJiIvKY9QYRlQ9-40tyx4wkxUZzl5SZTcyQqvZ-DKFAt6V8cvPNzurNrSXK=s900-c-k-c0x00ffffff-no-rj",
     type: "current",
     description: [
       "Coordinated and managed cargo loading, unloading, and storage for multiple shipments daily, ensuring compliance with safety regulations and company standards, resulting in zero safety incidents during tenure.",
@@ -57,7 +57,7 @@ const jobs = [
     location: "Leesburg, VA",
     period: "Mar 2023 - Dec 2024",
     // FIX: Updated this URL to a stable PNG
-    iconUrl: "https://assets.stickpng.com/images/58428b0fA6515b1e0ad75abf.png",
+    iconUrl: "https://images.seeklogo.com/logo-png/50/1/macys-logo-png_seeklogo-504490.png",
     type: "past",
     description: [
       "Exceeded sales targets consistently, achieving over $200,000 in total sales through personalized customer engagement and product recommendations.",
