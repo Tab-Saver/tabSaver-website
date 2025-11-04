@@ -132,7 +132,7 @@ export function WorkExperience() {
                     <h3 className="text-lg text-gray-900 mb-1">{job.title}</h3>
                     <p className="text-gray-700 text-sm mb-2">
                       {job.company}
-                      {job.location && \` • \${job.location}\`}
+                      {job.location && ` • ${job.location}`}
                     </p>
                     <p className="text-xs text-gray-500">{job.period}</p>
                   </div>
