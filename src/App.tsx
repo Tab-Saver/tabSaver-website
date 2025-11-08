@@ -268,8 +268,78 @@ export default function App() {
         </div>
       </section>
 
+      {/* Stats Section */}
+      <section className="py-20 px-6 bg-white border-t border-gray-200">
+        <div className="max-w-6xl mx-auto">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+            className="text-center mb-16"
+          >
+            <h2 className="text-4xl md:text-5xl mb-4 bg-gradient-to-r from-gray-900 to-gray-700 bg-clip-text text-transparent">
+              Trusted by Power Users
+            </h2>
+            <p className="text-gray-600 max-w-2xl mx-auto">
+              Join thousands of users who save time and boost productivity every day
+            </p>
+          </motion.div>
+
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+            <motion.div
+              className="text-center p-6 rounded-xl bg-gradient-to-br from-yellow-50 to-yellow-100 border border-yellow-200"
+              initial={{ opacity: 0, scale: 0.9 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.1 }}
+            >
+              <div className="text-4xl md:text-5xl font-bold text-yellow-600 mb-2">2hrs</div>
+              <div className="text-sm text-gray-700 font-medium">Avg. Time Saved</div>
+              <div className="text-xs text-gray-600 mt-1">Per Week</div>
+            </motion.div>
+
+            <motion.div
+              className="text-center p-6 rounded-xl bg-gradient-to-br from-green-50 to-green-100 border border-green-200"
+              initial={{ opacity: 0, scale: 0.9 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.2 }}
+            >
+              <div className="text-4xl md:text-5xl font-bold text-green-600 mb-2">100%</div>
+              <div className="text-sm text-gray-700 font-medium">Private & Secure</div>
+              <div className="text-xs text-gray-600 mt-1">Local Storage</div>
+            </motion.div>
+
+            <motion.div
+              className="text-center p-6 rounded-xl bg-gradient-to-br from-blue-50 to-blue-100 border border-blue-200"
+              initial={{ opacity: 0, scale: 0.9 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.3 }}
+            >
+              <div className="text-4xl md:text-5xl font-bold text-blue-600 mb-2">50+</div>
+              <div className="text-sm text-gray-700 font-medium">Tabs Per Session</div>
+              <div className="text-xs text-gray-600 mt-1">Average Save</div>
+            </motion.div>
+
+            <motion.div
+              className="text-center p-6 rounded-xl bg-gradient-to-br from-purple-50 to-purple-100 border border-purple-200"
+              initial={{ opacity: 0, scale: 0.9 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.4 }}
+            >
+              <div className="text-4xl md:text-5xl font-bold text-purple-600 mb-2">0.5s</div>
+              <div className="text-sm text-gray-700 font-medium">Lightning Fast</div>
+              <div className="text-xs text-gray-600 mt-1">Save Speed</div>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
       {/* How It Works Section */}
-      <section id="how-it-works" className="py-20 px-6 bg-white">
+      <section id="how-it-works" className="py-20 px-6 bg-gray-50">
         <div className="max-w-6xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
