@@ -27,18 +27,14 @@ export default function App() {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     
-    // Placeholder email - will be replaced with actual implementation
-    const mailtoLink = `mailto:support@tabsaver.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(`From: ${email}\n\n${message}`)}`;
+    const mailtoLink = `mailto:tabsaver.help@outlook.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(`From: ${email}\n\n${message}`)}`;
     
-    // Show success message
     toast.success("Opening your email client...", {
       description: "Your feedback form is ready to send!"
     });
     
-    // Open mailto link
     window.location.href = mailtoLink;
     
-    // Reset form
     setEmail("");
     setSubject("");
     setMessage("");
@@ -417,11 +413,11 @@ export default function App() {
               <div className="mt-8 pt-8 border-t border-gray-200 text-center">
                 <p className="text-sm text-gray-600 mb-4">You can also reach us at:</p>
                 <a 
-                  href="mailto:support@tabsaver.com" 
+                  href="mailto:tabsaver.help@outlook.com" 
                   className="text-gray-900 hover:text-yellow-600 transition-colors inline-flex items-center gap-2"
                 >
                   <Mail className="w-4 h-4" />
-                  support@tabsaver.com
+                  tabsaver.help@outlook.com
                 </a>
               </div>
             </div>
@@ -464,7 +460,7 @@ export default function App() {
               <h4 className="mb-4">Connect</h4>
               <div className="flex gap-4">
                 <a 
-                  href="https://github.com/omarhamdan010" 
+                  href="https://github.com/omarayman23" 
                   target="_blank" 
                   rel="noopener noreferrer"
                   className="w-10 h-10 bg-gray-800 rounded-lg flex items-center justify-center hover:bg-gray-700 transition-colors"
@@ -472,7 +468,7 @@ export default function App() {
                   <Github className="w-5 h-5" />
                 </a>
                 <a 
-                  href="mailto:support@tabsaver.com"
+                  href="mailto:tabsaver.help@outlook.com"
                   className="w-10 h-10 bg-gray-800 rounded-lg flex items-center justify-center hover:bg-gray-700 transition-colors"
                 >
                   <Mail className="w-5 h-5" />
