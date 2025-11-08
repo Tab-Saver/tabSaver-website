@@ -1,0 +1,82 @@
+export function Logo128() {
+  return (
+    <svg
+      width="128"
+      height="128"
+      viewBox="0 0 128 128"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      {/* Background circle */}
+      <circle
+        cx="64"
+        cy="64"
+        r="56"
+        fill="#030213"
+        opacity="0.05"
+      />
+
+      {/* Folder back */}
+      <path
+        d="M24 48 L24 98 C24 102 25 106 28 106 L100 106 C103 106 104 102 104 98 L104 48 Z"
+        fill="#E89D3F"
+        stroke="#D08A2F"
+        strokeWidth="2"
+      />
+
+      {/* Folder tab */}
+      <path
+        d="M24 48 L24 38 C24 34 25 30 28 30 L48 30 L54 36 L100 36 C103 36 104 38 104 42 L104 48 Z"
+        fill="#F5B456"
+        stroke="#D08A2F"
+        strokeWidth="2"
+      />
+
+      {/* Tab dividers inside folder */}
+      <line
+        x1="40"
+        y1="52"
+        x2="40"
+        y2="102"
+        stroke="#ffffff"
+        strokeWidth="3"
+        opacity="0.4"
+      />
+      <line
+        x1="64"
+        y1="52"
+        x2="64"
+        y2="102"
+        stroke="#ffffff"
+        strokeWidth="3"
+        opacity="0.4"
+      />
+      <line
+        x1="88"
+        y1="52"
+        x2="88"
+        y2="102"
+        stroke="#ffffff"
+        strokeWidth="3"
+        opacity="0.4"
+      />
+
+      {/* Save/bookmark icon */}
+      <circle
+        cx="92"
+        cy="38"
+        r="14"
+        fill="#4CAF50"
+        stroke="#388E3C"
+        strokeWidth="2"
+      />
+      <path
+        d="M86 38 L90 42 L98 34"
+        stroke="white"
+        strokeWidth="3"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </svg>
+  );
+}
