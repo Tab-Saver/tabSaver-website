@@ -28,7 +28,7 @@ export default function ExtensionApp() {
     e.preventDefault();
 
     // Placeholder email - will be replaced with actual implementation
-    const mailtoLink = `mailto:support@tabsaver.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(`From: ${email}\n\n${message}`)}`;
+    const mailtoLink = `mailto:tabsaver.help@outlook.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(`From: ${email}\n\n${message}`)}`;
 
     // Show success message
     toast.success("Opening your email client...", {
