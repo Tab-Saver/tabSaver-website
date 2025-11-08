@@ -286,53 +286,157 @@ export default function App() {
             </p>
           </motion.div>
 
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+          <div className="grid md:grid-cols-3 gap-6">
+            {/* Time Saved Card */}
             <motion.div
-              className="text-center p-6 rounded-xl bg-gradient-to-br from-yellow-50 to-yellow-100 border border-yellow-200"
-              initial={{ opacity: 0, scale: 0.9 }}
-              whileInView={{ opacity: 1, scale: 1 }}
+              className="bg-white rounded-xl border border-gray-200 p-6 shadow-sm hover:shadow-md transition-shadow"
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0.1 }}
             >
-              <div className="text-4xl md:text-5xl font-bold text-yellow-600 mb-2">2hrs</div>
-              <div className="text-sm text-gray-700 font-medium">Avg. Time Saved</div>
-              <div className="text-xs text-gray-600 mt-1">Per Week</div>
+              <div className="flex items-start justify-between mb-4">
+                <div>
+                  <div className="text-xs text-gray-500 uppercase tracking-wider mb-1">Avg. Time Saved</div>
+                  <div className="text-3xl font-bold text-gray-900">2hrs</div>
+                  <div className="text-xs text-gray-500 mt-1">Per Week</div>
+                </div>
+                <div className="text-green-500">↗</div>
+              </div>
+              <svg className="w-full h-12" viewBox="0 0 120 30" preserveAspectRatio="none">
+                <path
+                  d="M0,20 L20,18 L40,22 L60,15 L80,10 L100,8 L120,5"
+                  fill="none"
+                  stroke="rgb(234, 179, 8)"
+                  strokeWidth="2"
+                  className="animate-pulse"
+                />
+                <path
+                  d="M0,20 L20,18 L40,22 L60,15 L80,10 L100,8 L120,5 L120,30 L0,30 Z"
+                  fill="url(#gradient-yellow)"
+                  opacity="0.2"
+                />
+                <defs>
+                  <linearGradient id="gradient-yellow" x1="0%" y1="0%" x2="0%" y2="100%">
+                    <stop offset="0%" stopColor="rgb(234, 179, 8)" stopOpacity="0.4" />
+                    <stop offset="100%" stopColor="rgb(234, 179, 8)" stopOpacity="0" />
+                  </linearGradient>
+                </defs>
+              </svg>
             </motion.div>
 
+            {/* Security Card */}
             <motion.div
-              className="text-center p-6 rounded-xl bg-gradient-to-br from-green-50 to-green-100 border border-green-200"
-              initial={{ opacity: 0, scale: 0.9 }}
-              whileInView={{ opacity: 1, scale: 1 }}
+              className="bg-white rounded-xl border border-gray-200 p-6 shadow-sm hover:shadow-md transition-shadow"
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0.2 }}
             >
-              <div className="text-4xl md:text-5xl font-bold text-green-600 mb-2">100%</div>
-              <div className="text-sm text-gray-700 font-medium">Private & Secure</div>
-              <div className="text-xs text-gray-600 mt-1">Local Storage</div>
+              <div className="flex items-start justify-between mb-4">
+                <div>
+                  <div className="text-xs text-gray-500 uppercase tracking-wider mb-1">Security Level</div>
+                  <div className="text-3xl font-bold text-gray-900">100%</div>
+                  <div className="text-xs text-gray-500 mt-1">Local Storage</div>
+                </div>
+                <div className="text-green-500">✓</div>
+              </div>
+              <div className="relative pt-1">
+                <div className="flex mb-2 items-center justify-between">
+                  <div className="text-xs text-gray-500">Encrypted</div>
+                  <div className="text-xs text-green-600 font-semibold">100%</div>
+                </div>
+                <div className="overflow-hidden h-2 text-xs flex rounded bg-green-100">
+                  <motion.div
+                    initial={{ width: 0 }}
+                    whileInView={{ width: "100%" }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 1, delay: 0.5 }}
+                    className="shadow-none flex flex-col text-center whitespace-nowrap text-white justify-center bg-green-500"
+                  />
+                </div>
+                <div className="mt-3 grid grid-cols-3 gap-1">
+                  <div className="h-1 bg-green-500 rounded"></div>
+                  <div className="h-1 bg-green-500 rounded"></div>
+                  <div className="h-1 bg-green-500 rounded"></div>
+                </div>
+              </div>
             </motion.div>
 
+            {/* Performance Card */}
             <motion.div
-              className="text-center p-6 rounded-xl bg-gradient-to-br from-blue-50 to-blue-100 border border-blue-200"
-              initial={{ opacity: 0, scale: 0.9 }}
-              whileInView={{ opacity: 1, scale: 1 }}
+              className="bg-white rounded-xl border border-gray-200 p-6 shadow-sm hover:shadow-md transition-shadow"
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0.3 }}
             >
-              <div className="text-4xl md:text-5xl font-bold text-blue-600 mb-2">50+</div>
-              <div className="text-sm text-gray-700 font-medium">Tabs Per Session</div>
-              <div className="text-xs text-gray-600 mt-1">Average Save</div>
+              <div className="flex items-start justify-between mb-4">
+                <div>
+                  <div className="text-xs text-gray-500 uppercase tracking-wider mb-1">Save Speed</div>
+                  <div className="text-3xl font-bold text-gray-900">0.5s</div>
+                  <div className="text-xs text-gray-500 mt-1">Lightning Fast</div>
+                </div>
+                <div className="text-blue-500">⚡</div>
+              </div>
+              <svg className="w-full h-12" viewBox="0 0 120 30" preserveAspectRatio="none">
+                <path
+                  d="M0,25 L15,20 L30,23 L45,18 L60,15 L75,20 L90,12 L105,15 L120,10"
+                  fill="none"
+                  stroke="rgb(59, 130, 246)"
+                  strokeWidth="2"
+                />
+                <path
+                  d="M0,25 L15,20 L30,23 L45,18 L60,15 L75,20 L90,12 L105,15 L120,10 L120,30 L0,30 Z"
+                  fill="url(#gradient-blue)"
+                  opacity="0.2"
+                />
+                <defs>
+                  <linearGradient id="gradient-blue" x1="0%" y1="0%" x2="0%" y2="100%">
+                    <stop offset="0%" stopColor="rgb(59, 130, 246)" stopOpacity="0.4" />
+                    <stop offset="100%" stopColor="rgb(59, 130, 246)" stopOpacity="0" />
+                  </linearGradient>
+                </defs>
+              </svg>
             </motion.div>
+          </div>
 
+          {/* Bottom Stats */}
+          <div className="grid md:grid-cols-3 gap-6 mt-6">
             <motion.div
-              className="text-center p-6 rounded-xl bg-gradient-to-br from-purple-50 to-purple-100 border border-purple-200"
-              initial={{ opacity: 0, scale: 0.9 }}
-              whileInView={{ opacity: 1, scale: 1 }}
+              className="bg-gradient-to-br from-purple-50 to-white rounded-xl border border-purple-200 p-6"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0.4 }}
             >
-              <div className="text-4xl md:text-5xl font-bold text-purple-600 mb-2">0.5s</div>
-              <div className="text-sm text-gray-700 font-medium">Lightning Fast</div>
-              <div className="text-xs text-gray-600 mt-1">Save Speed</div>
+              <div className="text-4xl font-bold text-purple-600 mb-2">50+</div>
+              <div className="text-sm text-gray-700">Tabs Per Session</div>
+              <div className="text-xs text-gray-500 mt-1">Average Save</div>
+            </motion.div>
+
+            <motion.div
+              className="bg-gradient-to-br from-orange-50 to-white rounded-xl border border-orange-200 p-6"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.5 }}
+            >
+              <div className="text-4xl font-bold text-orange-600 mb-2">10k+</div>
+              <div className="text-sm text-gray-700">Active Users</div>
+              <div className="text-xs text-gray-500 mt-1">And Growing</div>
+            </motion.div>
+
+            <motion.div
+              className="bg-gradient-to-br from-teal-50 to-white rounded-xl border border-teal-200 p-6"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.6 }}
+            >
+              <div className="text-4xl font-bold text-teal-600 mb-2">4.8★</div>
+              <div className="text-sm text-gray-700">User Rating</div>
+              <div className="text-xs text-gray-500 mt-1">Based on Reviews</div>
             </motion.div>
           </div>
         </div>
