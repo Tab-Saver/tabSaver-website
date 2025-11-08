@@ -464,7 +464,7 @@ export default function App() {
               <h4 className="mb-4">Connect</h4>
               <div className="flex gap-4">
                 <a 
-                  href="https://github.com/omarhamdan23" 
+                  href="https://github.com/omarhamdan010" 
                   target="_blank" 
                   rel="noopener noreferrer"
                   className="w-10 h-10 bg-gray-800 rounded-lg flex items-center justify-center hover:bg-gray-700 transition-colors"

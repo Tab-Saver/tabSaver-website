@@ -1,0 +1,25 @@
+<svg width="128" height="128" viewBox="0 0 128 128" xmlns="http://www.w3.org/2000/svg">
+  <!-- Green Background -->
+  <rect width="128" height="128" fill="#4CAF50" rx="20"/>
+  
+  <!-- Yellow Folder -->
+  <g transform="translate(24, 32)">
+    <!-- Folder Tab -->
+    <path d="M0 8 L0 4 C0 2 2 0 4 0 L24 0 L28 8 Z" fill="#FDD835"/>
+    
+    <!-- Folder Body -->
+    <rect x="0" y="8" width="80" height="56" rx="4" fill="#FDD835"/>
+    
+    <!-- Folder Shadow/Depth -->
+    <rect x="0" y="60" width="80" height="4" rx="2" fill="#F9A825" opacity="0.5"/>
+  </g>
+  
+  <!-- White Bookmark/Save Icon -->
+  <g transform="translate(72, 48)">
+    <!-- Bookmark Shape -->
+    <path d="M0 0 L24 0 L24 36 L12 28 L0 36 Z" fill="white"/>
+    
+    <!-- Small checkmark or fold detail -->
+    <circle cx="12" cy="12" r="3" fill="#4CAF50"/>
+  </g>
+</svg>
