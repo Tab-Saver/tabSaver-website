@@ -1,0 +1,16 @@
+<svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Folder back -->
+  <path d="M6 12 L6 26 C6 27 6.5 28 7 28 L25 28 C25.5 28 26 27 26 26 L26 12 Z" fill="#E89D3F" stroke="#D08A2F" stroke-width="1"/>
+  
+  <!-- Folder tab -->
+  <path d="M6 12 L6 9 C6 8 6.5 7 7 7 L12 7 L14 9 L25 9 C25.5 9 26 9.5 26 10.5 L26 12 Z" fill="#F5B456" stroke="#D08A2F" stroke-width="1"/>
+  
+  <!-- Tab dividers -->
+  <line x1="10" y1="13" x2="10" y2="27" stroke="#ffffff" stroke-width="1" opacity="0.4"/>
+  <line x1="16" y1="13" x2="16" y2="27" stroke="#ffffff" stroke-width="1" opacity="0.4"/>
+  <line x1="22" y1="13" x2="22" y2="27" stroke="#ffffff" stroke-width="1" opacity="0.4"/>
+  
+  <!-- Checkmark badge -->
+  <circle cx="23" cy="9" r="4" fill="#4CAF50" stroke="#388E3C" stroke-width="0.5"/>
+  <path d="M21 9 L22.5 10.5 L25 8" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
