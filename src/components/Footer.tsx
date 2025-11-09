@@ -26,7 +26,7 @@ export function Footer() {
                 </a>
               </li>
               <li>
-                <a href="https://github.com/omarayman23" target="_blank" rel="noopener noreferrer" className="hover:opacity-100 transition-opacity">
+                <a href="https://github.com/omarayman23/tabSaver-ui/privacy-policy.md" target="_blank" rel="noopener noreferrer" className="hover:opacity-100 transition-opacity">
                   Documentation
                 </a>
               </li>
