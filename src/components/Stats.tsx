@@ -15,10 +15,10 @@ const securityData = [
 ];
 
 const benefitsBreakdown = [
-  { benefit: "No Re-login", value: 35, color: "hsl(var(--chart-1))" },
-  { benefit: "Context Recall", value: 30, color: "hsl(var(--chart-2))" },
-  { benefit: "Crash Recovery", value: 20, color: "hsl(var(--chart-3))" },
-  { benefit: "Tab Finding", value: 15, color: "hsl(var(--chart-4))" },
+  { benefit: "No Re-login", value: 35, color: "#8B5CF6" },
+  { benefit: "Context Recall", value: 30, color: "#3B82F6" },
+  { benefit: "Crash Recovery", value: 20, color: "#10B981" },
+  { benefit: "Tab Finding", value: 15, color: "#F59E0B" },
 ];
 
 export function Stats() {
