@@ -53,7 +53,7 @@ export function Features() {
           {features.map((feature) => {
             const Icon = feature.icon;
             return (
-              <Card key={feature.title} className="p-6 space-y-4 hover:shadow-lg transition-shadow border-2 hover:border-primary/20">
+              <Card key={feature.title} className="p-6 space-y-4 hover:shadow-lg transition-shadow">
                 <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center">
                   <Icon className="w-6 h-6 text-primary" />
                 </div>
