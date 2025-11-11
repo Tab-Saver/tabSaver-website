@@ -44,7 +44,7 @@ export function Contact() {
   };
 
   return (
-    <section className="py-20 px-6 bg-background">
+    <section id="contact" className="py-20 px-6 bg-background">
       <div className="max-w-6xl mx-auto">
         <div className="text-center space-y-4 mb-12">
           <h2 className="text-4xl">Get in Touch</h2>
