@@ -105,8 +105,8 @@ export function Stats() {
           animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
           transition={{ duration: 0.6, delay: 0.4 }}
         >
-          <Card className="p-8 mb-8">
-            <div className="space-y-16">
+          <Card className="p-10 mb-8">
+            <div className="space-y-20">
               {/* Diagram on top */}
               <motion.div
                 initial={{ opacity: 0, scale: 0.9 }}
@@ -118,57 +118,60 @@ export function Stats() {
               
               {/* AI Content and Chart side by side */}
               <motion.div 
-                className="grid md:grid-cols-2 gap-12 items-start"
+                className="grid md:grid-cols-2 gap-16 items-start"
                 initial={{ opacity: 0, y: 30 }}
                 animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
                 transition={{ duration: 0.6, delay: 0.6 }}
               >
-              <div className="space-y-6">
+              <div className="space-y-8">
                 <div className="flex items-center gap-4">
-                  <div className="w-16 h-16 rounded-xl bg-gradient-to-br from-primary/20 to-primary/10 flex items-center justify-center shadow-sm">
-                    <Brain className="w-8 h-8 text-primary" />
+                  <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center border">
+                    <Brain className="w-6 h-6 text-primary" />
                   </div>
-                  <h3 className="text-2xl font-bold leading-tight">AI-Powered Smart Summarization</h3>
+                  <h3 className="text-2xl font-bold">AI-Powered Smart Summarization</h3>
                 </div>
-                <p className="text-muted-foreground text-base leading-relaxed max-w-none">
+                <p className="text-muted-foreground text-base leading-relaxed">
                   Tab Saver uses advanced AI to intelligently summarize your saved pages, helping you quickly recall important information without reopening every tab.
                 </p>
-                <div className="space-y-4">
+                <div className="space-y-6">
                   <div className="flex items-start gap-4">
                     <div className="flex-shrink-0 mt-1">
-                      <CheckCircle2 className="w-7 h-7 text-primary" />
+                      <CheckCircle2 className="w-6 h-6 text-primary" />
                     </div>
-                    <div>
-                      <p className="font-semibold text-base mb-1">Opt-In Only</p>
+                    <div className="space-y-1">
+                      <p className="font-semibold text-base">Opt-In Only</p>
                       <p className="text-sm text-muted-foreground leading-relaxed">AI summarization is disabled by default. You control when and what gets summarized.</p>
                     </div>
                   </div>
                   <div className="flex items-start gap-4">
                     <div className="flex-shrink-0 mt-1">
-                      <CheckCircle2 className="w-7 h-7 text-primary" />
+                      <CheckCircle2 className="w-6 h-6 text-primary" />
                     </div>
-                    <div>
-                      <p className="font-semibold text-base mb-1">Secure Processing</p>
+                    <div className="space-y-1">
+                      <p className="font-semibold text-base">Secure Processing</p>
                       <p className="text-sm text-muted-foreground leading-relaxed">Content is sent over HTTPS to our secure backend API only when you explicitly enable the feature.</p>
                     </div>
                   </div>
                   <div className="flex items-start gap-4">
                     <div className="flex-shrink-0 mt-1">
-                      <CheckCircle2 className="w-7 h-7 text-primary" />
+                      <CheckCircle2 className="w-6 h-6 text-primary" />
                     </div>
-                    <div>
-                      <p className="font-semibold text-base mb-1">Instant Insights</p>
+                    <div className="space-y-1">
+                      <p className="font-semibold text-base">Instant Insights</p>
                       <p className="text-sm text-muted-foreground leading-relaxed">Get concise summaries that capture key points, making it easy to find what you need later.</p>
                     </div>
                   </div>
                 </div>
               </div>
-              <div>
-                <div className="flex items-center gap-2 mb-6">
-                  <TrendingUp className="w-5 h-5 text-primary" />
-                  <h4 className="font-semibold text-lg">Productivity Growth</h4>
+              <div className="space-y-6">
+                <div className="flex items-center gap-3">
+                  <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center border">
+                    <TrendingUp className="w-5 h-5 text-primary" />
+                  </div>
+                  <h4 className="font-semibold text-xl">Productivity Growth</h4>
                 </div>
-                <ResponsiveContainer width="100%" height={320}>
+                <Card className="p-6 border">
+                  <ResponsiveContainer width="100%" height={320}>
                   <ComposedChart data={productivityData} margin={{ top: 10, right: 10, left: 0, bottom: 0 }}>
                     <defs>
                       <linearGradient id="gradientSessions" x1="0" y1="0" x2="0" y2="1">
@@ -226,7 +229,8 @@ export function Stats() {
                     />
                   </ComposedChart>
                 </ResponsiveContainer>
-                <div className="flex justify-center gap-6 mt-6 flex-wrap">
+                </Card>
+                <div className="flex justify-center gap-8 flex-wrap">
                   <div className="flex items-center gap-2">
                     <div className="w-3 h-3 rounded-full bg-[hsl(var(--chart-1))]" />
                     <span className="text-sm text-muted-foreground font-medium">Sessions Saved</span>
