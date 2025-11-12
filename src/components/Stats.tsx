@@ -2,6 +2,9 @@ import { Card } from "./ui/card";
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, LineChart, Line, ComposedChart, Cell } from "recharts";
 import { Sparkles, Shield, Zap, Brain, CheckCircle2, TrendingUp } from "lucide-react";
 import { AIAnimation } from "./AIAnimation";
+import { motion } from "framer-motion";
+import { useInView } from "framer-motion";
+import { useRef } from "react";
 
 const productivityData = [
   { month: "Jan", sessions: 45, summaries: 12, efficiency: 27 },
@@ -16,73 +19,118 @@ const COLORS = {
   efficiency: "hsl(var(--chart-3))",
 };
 
+const statCards = [
+  { icon: Sparkles, label: "AI Summaries Generated", value: "152+", subtext: "Smart content summaries" },
+  { icon: Shield, label: "Privacy Score", value: "100%", subtext: "All data stays local" },
+  { icon: Zap, label: "Sessions Saved", value: "280+", subtext: "Organized collections" },
+  { icon: Brain, label: "AI Accuracy", value: "94%", subtext: "Summary quality rating" },
+];
+
 export function Stats() {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true, margin: "-100px" });
+  const statsRef = useRef(null);
+  const statsInView = useInView(statsRef, { once: true, margin: "-50px" });
+
   return (
-    <section id="stats" className="py-20 px-6 bg-muted/30">
+    <section id="stats" className="py-20 px-6 bg-muted/30" ref={ref}>
       <div className="max-w-6xl mx-auto">
-        <div className="text-center space-y-4 mb-16">
+        <motion.div 
+          className="text-center space-y-4 mb-16"
+          initial={{ opacity: 0, y: 30 }}
+          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
+          transition={{ duration: 0.6 }}
+        >
           <h2 className="text-4xl font-bold">Powerful Features, Real Results</h2>
           <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
             Tab Saver combines intelligent AI-powered summarization with secure local storage to transform how you manage your browsing sessions.
           </p>
-        </div>
+        </motion.div>
         
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
-          <Card className="p-6 space-y-2">
-            <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center">
-              <Sparkles className="w-6 h-6 text-primary" />
-            </div>
-            <p className="text-muted-foreground text-sm">AI Summaries Generated</p>
-            <p className="text-4xl font-bold">152+</p>
-            <p className="text-muted-foreground text-sm">Smart content summaries</p>
-          </Card>
-          
-          <Card className="p-6 space-y-2">
-            <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center">
-              <Shield className="w-6 h-6 text-primary" />
-            </div>
-            <p className="text-muted-foreground text-sm">Privacy Score</p>
-            <p className="text-4xl font-bold">100%</p>
-            <p className="text-muted-foreground text-sm">All data stays local</p>
-          </Card>
-          
-          <Card className="p-6 space-y-2">
-            <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center">
-              <Zap className="w-6 h-6 text-primary" />
-            </div>
-            <p className="text-muted-foreground text-sm">Sessions Saved</p>
-            <p className="text-4xl font-bold">280+</p>
-            <p className="text-muted-foreground text-sm">Organized collections</p>
-          </Card>
-          
-          <Card className="p-6 space-y-2">
-            <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center">
-              <Brain className="w-6 h-6 text-primary" />
-            </div>
-            <p className="text-muted-foreground text-sm">AI Accuracy</p>
-            <p className="text-4xl font-bold">94%</p>
-            <p className="text-muted-foreground text-sm">Summary quality rating</p>
-          </Card>
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12" ref={statsRef}>
+          {statCards.map((stat, index) => {
+            const Icon = stat.icon;
+            return (
+              <motion.div
+                key={stat.label}
+                initial={{ opacity: 0, y: 30, scale: 0.9 }}
+                animate={statsInView ? { opacity: 1, y: 0, scale: 1 } : { opacity: 0, y: 30, scale: 0.9 }}
+                transition={{ 
+                  duration: 0.5, 
+                  delay: index * 0.1,
+                  type: "spring",
+                  stiffness: 100
+                }}
+                whileHover={{ 
+                  y: -5, 
+                  scale: 1.05,
+                  transition: { duration: 0.2 }
+                }}
+              >
+                <Card className="p-6 space-y-2 hover:shadow-xl transition-all duration-300 cursor-pointer group">
+                  <motion.div 
+                    className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 transition-colors duration-300"
+                    whileHover={{ 
+                      rotate: 360,
+                      scale: 1.15
+                    }}
+                    transition={{ duration: 0.6 }}
+                  >
+                    <Icon className="w-6 h-6 text-primary" />
+                  </motion.div>
+                  <p className="text-muted-foreground text-sm">{stat.label}</p>
+                  <motion.p 
+                    className="text-4xl font-bold"
+                    initial={{ scale: 0 }}
+                    animate={statsInView ? { scale: 1 } : { scale: 0 }}
+                    transition={{ 
+                      duration: 0.5, 
+                      delay: index * 0.1 + 0.3,
+                      type: "spring",
+                      stiffness: 200
+                    }}
+                  >
+                    {stat.value}
+                  </motion.p>
+                  <p className="text-muted-foreground text-sm">{stat.subtext}</p>
+                </Card>
+              </motion.div>
+            );
+          })}
         </div>
 
         {/* AI Summarization Feature Section */}
-        <Card className="p-8 mb-8">
-          <div className="space-y-8">
-            {/* Diagram on top */}
-            <div>
-              <AIAnimation />
-            </div>
-            
-            {/* AI Content and Chart side by side */}
-            <div className="grid md:grid-cols-2 gap-12 items-start">
+        <motion.div
+          initial={{ opacity: 0, y: 50 }}
+          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
+          transition={{ duration: 0.6, delay: 0.4 }}
+        >
+          <Card className="p-8 mb-8">
+            <div className="space-y-16">
+              {/* Diagram on top */}
+              <motion.div
+                initial={{ opacity: 0, scale: 0.9 }}
+                animate={isInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.9 }}
+                transition={{ duration: 0.5, delay: 0.5 }}
+              >
+                <AIAnimation />
+              </motion.div>
+              
+              {/* AI Content and Chart side by side */}
+              <motion.div 
+                className="grid md:grid-cols-2 gap-12 items-start"
+                initial={{ opacity: 0, y: 30 }}
+                animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
+                transition={{ duration: 0.6, delay: 0.6 }}
+              >
               <div className="space-y-6">
                 <div className="flex items-center gap-4">
                   <div className="w-16 h-16 rounded-xl bg-gradient-to-br from-primary/20 to-primary/10 flex items-center justify-center shadow-sm">
                     <Brain className="w-8 h-8 text-primary" />
                   </div>
-                  <h3 className="text-2xl font-bold">AI-Powered Smart Summarization</h3>
+                  <h3 className="text-2xl font-bold leading-tight">AI-Powered Smart Summarization</h3>
                 </div>
-                <p className="text-muted-foreground text-base leading-relaxed">
+                <p className="text-muted-foreground text-base leading-relaxed max-w-none">
                   Tab Saver uses advanced AI to intelligently summarize your saved pages, helping you quickly recall important information without reopening every tab.
                 </p>
                 <div className="space-y-4">
@@ -193,9 +241,10 @@ export function Stats() {
                   </div>
                 </div>
               </div>
-            </div>
+            </motion.div>
           </div>
         </Card>
+        </motion.div>
       </div>
     </section>
   );
